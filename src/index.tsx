@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import App from './App';
+import { Routes } from './Routes';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
@@ -11,7 +11,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <Routes />
   </ApolloProvider>,
   document.getElementById('root')
 );
