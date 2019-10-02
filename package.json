@@ -47,6 +47,7 @@
     "@graphql-codegen/typescript-react-apollo": "1.7.0",
     "@types/graphql": "^14.5.0",
     "@types/react-router-dom": "^4.3.5",
+    "@types/yup": "^0.26.24",
     "prettier": "1.17.1"
   }
 }
