@@ -85,7 +85,7 @@ export const Register: React.FC<RegisterProps & RouteComponentProps> = ({
             <Error touched={touched.password} message={errors.password} />
             <div className="input-row">
               <button type="submit" disabled={isSubmitting}>
-                Submit
+                Register
               </button>
             </div>
           </form>
