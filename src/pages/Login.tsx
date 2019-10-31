@@ -5,6 +5,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { validationSchema } from '../utils/validationSchema';
 import Error from '../utils/Error';
 import { useLoginMutation } from '../generated/graphql';
+import { setAccessToken } from '../accessToken';
 
 interface LoginProps {}
 
@@ -34,6 +35,10 @@ export const Login: React.FC<LoginProps & RouteComponentProps> = ({
           });
 
           console.log('TCL: response: ', response);
+
+          if (response && response.data) {
+            setAccessToken(response.data.login.accessToken);
+          }
           resetForm();
           setSubmitting(false);
           history.push('/');
