@@ -45,12 +45,16 @@ export const Login: React.FC<LoginProps & RouteComponentProps> = ({
       >
         {({ handleSubmit, isSubmitting }) => (
           <Form className="form" onSubmit={handleSubmit}>
-            <FormTextField placeholder="Email" name="email" type="text" />
-            <FormTextField
-              placeholder="Password"
-              name="password"
-              type="password"
-            />
+            <div className="input-row">
+              <FormTextField placeholder="Email" name="email" type="text" />
+            </div>
+            <div className="input-row">
+              <FormTextField
+                placeholder="Password"
+                name="password"
+                type="password"
+              />
+            </div>
             <div className="input-row">
               <button type="submit" disabled={isSubmitting}>
                 Login

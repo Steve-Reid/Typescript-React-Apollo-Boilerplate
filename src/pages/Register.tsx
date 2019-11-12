@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { Formik, Field } from 'formik';
-import { InputField } from '../components/fields/InputField';
+import { Formik, Form } from 'formik';
 import { useRegisterMutation } from '../generated/graphql';
 import { RouteComponentProps } from 'react-router-dom';
 import { validationSchema } from '../utils/validationSchema';
-import Error from '../utils/Error';
+import { FormTextField } from '../components/fields/FormTextField';
 
 interface RegisterProps {}
 
@@ -40,55 +39,24 @@ export const Register: React.FC<RegisterProps & RouteComponentProps> = ({
           history.push('/');
         }}
       >
-        {({
-          errors,
-          touched,
-          handleSubmit,
-          isSubmitting,
-          handleChange,
-          handleBlur
-        }) => (
-          <form className="form" onSubmit={handleSubmit}>
-            {/* <Field
-              name="firstName"
-              placeholder="First Name"
-              component={InputField}
-            />
-            <Field
-              name="lastName"
-              placeholder="Last Name"
-              component={InputField}
-            /> */}
-            <Field
-              name="email"
-              id="email"
-              placeholder="Email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              component={InputField}
-              type="email"
-              className={touched.email && errors.email ? 'has-error' : null}
-            />
-            <Error touched={touched.email} message={errors.email} />
-            <Field
-              name="password"
-              id="password"
-              placeholder="Password"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              component={InputField}
-              type="password"
-              className={
-                touched.password && errors.password ? 'has-error' : null
-              }
-            />
-            <Error touched={touched.password} message={errors.password} />
+        {({ handleSubmit, isSubmitting }) => (
+          <Form className="form" onSubmit={handleSubmit}>
+            <div className="input-row">
+              <FormTextField placeholder="Email" name="email" type="text" />
+            </div>
+            <div className="input-row">
+              <FormTextField
+                placeholder="Password"
+                name="password"
+                type="password"
+              />
+            </div>
             <div className="input-row">
               <button type="submit" disabled={isSubmitting}>
-                Register
+                Login
               </button>
             </div>
-          </form>
+          </Form>
         )}
       </Formik>
     </div>
