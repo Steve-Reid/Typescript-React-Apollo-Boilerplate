@@ -1,10 +1,34 @@
+# Typescript React Apollo Boilerplate with User Authentication
+
+This is a React Apollo Typescript client which connects to a Graphql server.
+
+## Features
+
+- Register, Login and Logout
+- Authentication using JWT tokens and cookies
+- Authentication using JWT tokens and cookies
+
+## Tools used
+
+- [React](https://reactjs.org/)
+- [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Apollo Client(Graphql)](https://www.apollographql.com/docs/react/)
+- [GraphQL Code Generator](https://graphql-code-generator.com/)
+- [Formik-2](https://jaredpalmer.com/formik)
+- [Material UI](https://material-ui.com)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn gen`
+
+Generates the typescript types, interfaces, query and mutations with hooks<br>
+
+### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -12,12 +36,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,7 +51,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `yarn run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
